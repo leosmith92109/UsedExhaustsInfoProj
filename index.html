@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotoExhaust Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+:root{--bg:#0d0d0d;--bg2:#131313;--card:#1a1a1a;--edge:#2a2a2a;--accent:#ff6a00;--silver:#a8b0be;--text:#e8e8e8;--muted:#8d8d8d;--good:#57c46f;--bad:#ff5555;--div:rgba(255,255,255,.08);--fontH:"Bebas Neue",sans-serif;--fontB:"DM Sans",Arial,sans-serif;--focus:0 0 0 2px #0d0d0d,0 0 0 4px #ff6a00}
+html[data-theme="light"]{--bg:#f2f2f2;--bg2:#e7e7e7;--card:#fff;--edge:#d0d0d0;--accent:#ff6a00;--silver:#4a5563;--text:#111;--muted:#666;--good:#2a8a43;--bad:#b52f2f;--div:rgba(0,0,0,.12);--focus:0 0 0 2px #fff,0 0 0 4px #ff6a00}
+*{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--fontB)}
+body.drawer-open,body.modal-open{overflow:hidden}
+button,input,select{font:inherit;color:inherit;border:1px solid var(--edge);background:transparent;outline:none}
+button:focus-visible,input:focus-visible,select:focus-visible{box-shadow:var(--focus);border-color:transparent}
+#header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--bg),var(--bg2));border-bottom:1px solid var(--div);padding:12px 14px 10px}
+.brand-row{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid var(--div);padding-bottom:8px}
+.logo{margin:0;font-family:var(--fontH);font-size:clamp(2rem,3vw,2.5rem);letter-spacing:.08em;line-height:1}.logo .a{color:var(--text)}.logo .b{color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.mobile-only{display:none}
+.btn{padding:7px 10px;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;font-size:.72rem;font-weight:700;background:var(--card);transition:.15s}
+.btn:hover{border-color:var(--accent)}.btn.accent{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,var(--card) 84%)}
+.btn.q{color:var(--silver);background:color-mix(in srgb,var(--silver) 10%,var(--card) 90%)}.btn[data-active="true"]{color:var(--accent);border-color:var(--accent)}
+.filters{display:flex;gap:10px;overflow:auto;padding:9px 0 4px}.fg{min-width:145px;display:flex;flex-direction:column;gap:4px;flex:0 0 auto}.fg.search{min-width:230px;flex:1 1 260px}
+.fg label{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--muted)}
+.fg select,.fg input{height:36px;padding:0 10px;background:var(--card)}
+.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--div);padding-top:7px;min-height:28px}
+#count{font-size:.84rem;color:var(--silver)}#status{font-size:.8rem;color:var(--accent);min-height:1em}
+#main{padding:14px 14px 90px}#grid{display:grid;grid-template-columns:1fr;gap:12px}
+.load-wrap{display:flex;justify-content:center;padding:12px 0 0}
+.load-wrap[hidden]{display:none}
+.card{position:relative;border:1px solid var(--edge);padding:11px;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.015),rgba(255,255,255,.015) 2px,transparent 2px,transparent 6px),var(--card);border-left:2px solid transparent;opacity:0;transform:translateY(8px);animation:in .42s ease forwards;transition:.15s}
+.card:hover{transform:translateY(-3px);border-left-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--div);padding-bottom:7px}
+.brand{margin:0;font-family:var(--fontH);font-size:1.4rem;letter-spacing:.06em;line-height:1}.type{border:1px solid var(--accent);border-radius:999px;padding:2px 8px;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.fav{position:absolute;top:9px;right:9px;width:30px;height:30px;display:grid;place-items:center;cursor:pointer;border:1px solid var(--edge);color:var(--silver);background:rgba(0,0,0,.35);font-size:1rem}.fav.on{color:var(--accent);border-color:var(--accent)}
+.pn{margin:10px 0 6px;padding-right:34px;font-size:1.14rem;font-weight:700}.fit{margin:0;border-bottom:1px solid var(--div);padding-bottom:8px;font-size:.84rem;color:var(--silver)}
+.attrs{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.chip{border:1px solid var(--edge);padding:3px 6px;font-size:.69rem;text-transform:uppercase;color:var(--silver);background:color-mix(in srgb,var(--card) 86%,var(--bg2) 14%)}
+.desc{margin:10px 0;border-bottom:1px solid var(--div);padding-bottom:10px;font-size:.84rem;line-height:1.45}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-bottom:1px solid var(--div);padding-bottom:10px}.pt{margin:0 0 4px;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.pl{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:.76rem}.pi{display:flex;gap:6px;line-height:1.3}.mk{width:12px;text-align:center;font-weight:700}.pi.g .mk{color:var(--good)}.pi.b .mk{color:var(--bad)}
+.comp{display:grid;gap:6px;border-bottom:1px solid var(--div);padding:9px 0}.comp details{border:1px solid var(--edge);padding:7px;background:color-mix(in srgb,var(--card) 85%,var(--bg2) 15%)}.comp summary{cursor:pointer;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--silver);font-weight:700}.comp p{margin:6px 0 0;font-size:.75rem;line-height:1.4}
+.cactions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:9px}.ab{padding:7px 6px;font-size:.69rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:.15s}.ab:hover{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.cm{display:flex;gap:7px;align-items:center;margin-top:8px;font-size:.78rem;color:var(--silver)}.cm input{width:15px;height:15px;accent-color:var(--accent)}
+#empty{border:1px solid var(--edge);background:var(--card);padding:28px 14px;text-align:center}#empty h2{margin:0 0 7px;font-family:var(--fontH);font-size:2rem;color:var(--silver);letter-spacing:.06em;line-height:1}#empty p{margin:0 0 14px;color:var(--muted)}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.58);opacity:0;pointer-events:none;transition:.25s;z-index:80}#ov.open{opacity:1;pointer-events:auto}
+#drawer{position:fixed;right:0;top:0;height:100dvh;width:min(470px,100%);transform:translateX(100%);transition:.25s;z-index:90;border-left:1px solid var(--edge);background:linear-gradient(180deg,color-mix(in srgb,var(--card) 92%,var(--bg2) 8%),var(--card));padding:12px;display:flex;flex-direction:column;gap:10px;overflow:auto}
+#drawer.open{transform:translateX(0)}.dh{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;border-bottom:1px solid var(--div);padding-bottom:8px}.dh h2{margin:0;font-family:var(--fontH);font-size:1.8rem;letter-spacing:.05em;line-height:1}.dsub,.mnote{margin:0;font-size:.8rem;color:var(--silver)}
+.zr{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}.zr label{display:block;font-size:.69rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}.zr input{height:38px;padding:0 10px;background:var(--bg2)}#zipBtn{height:38px;min-width:102px}
+#links{display:grid;gap:7px}.mb{width:100%;text-align:left;padding:10px;border:1px solid var(--edge);background:color-mix(in srgb,var(--card) 88%,var(--bg2) 12%);cursor:pointer;font-size:.79rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;transition:.15s}.mb:hover{border-color:var(--accent);color:var(--accent);transform:translateX(2px)}
+#mapStatus{min-height:1em;font-size:.79rem;color:var(--silver)}#map{height:290px;border:1px solid var(--edge);background:#1a1a1a}
+#bar{position:fixed;left:0;bottom:0;width:100%;z-index:70;border-top:1px solid var(--edge);padding:10px 14px;background:color-mix(in srgb,var(--bg2) 72%,#000 28%);display:flex;justify-content:space-between;gap:8px;align-items:center}#bar[hidden]{display:none!important}#cc{font-family:var(--fontH);font-size:1.3rem;letter-spacing:.06em;line-height:1}.ba{display:flex;gap:8px}
+#modal{position:fixed;inset:0;z-index:105;display:none}#modal.open{display:block}.mbg{position:absolute;inset:0;background:rgba(0,0,0,.72)}.md{position:absolute;inset:4vh 3vw;border:1px solid var(--edge);background:var(--card);display:flex;flex-direction:column;overflow:hidden}.mh{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--div)}.mh h2{margin:0;font-family:var(--fontH);font-size:1.9rem;letter-spacing:.06em;line-height:1}
+.mw{padding:10px;height:100%;overflow:auto}#ct{width:max(900px,100%);border-collapse:collapse;font-size:.8rem;line-height:1.4}#ct th,#ct td{border:1px solid var(--edge);padding:8px;vertical-align:top;text-align:left}#ct thead th{position:sticky;top:0;background:color-mix(in srgb,var(--card) 86%,var(--bg2) 14%);z-index:1;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}#ct tbody th{width:185px;background:color-mix(in srgb,var(--card) 84%,var(--bg2) 16%);color:var(--silver);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#171717;color:#efefef;border-radius:0;border:1px solid #333}
+@media (min-width:768px){#header{padding:13px 20px 10px}#main{padding:16px 20px 90px}#grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1200px){#grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:767px){
+  .mobile-only{display:inline-block}
+  .actions{display:grid;grid-template-columns:1fr 1fr}
+  .filters{display:none;overflow:visible;gap:8px}
+  body.filters-open .filters{display:grid;grid-template-columns:1fr 1fr}
+  .fg{min-width:0;flex:auto}
+  .fg.search{grid-column:1 / span 2;min-width:0}
+  #drawer{left:0;right:auto;top:auto;bottom:0;width:100%;height:min(85dvh,760px);transform:translateY(100%);border-left:none;border-top:1px solid var(--edge)}
+  #drawer.open{transform:translateY(0)}
+  .cactions{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="brand-row">
+    <h1 class="logo"><span class="a">MOTO</span><span class="b">EXHAUST</span></h1>
+    <div class="actions">
+      <button id="filtersBtn" class="btn q mobile-only" type="button" aria-label="Toggle filter panel">Filters</button>
+      <button id="theme" class="btn q" type="button" aria-label="Toggle dark and light theme">Theme: Dark</button>
+      <button id="garage" class="btn q" type="button" aria-label="Toggle my garage favorites" data-active="false">My Garage: Off</button>
+      <button id="export" class="btn q" type="button" aria-label="Copy filtered list">Copy Filtered List</button>
+      <button id="reset" class="btn accent" type="button" aria-label="Reset filters">Reset Filters</button>
+    </div>
+  </div>
+  <div class="filters" aria-label="Filter controls">
+    <div class="fg"><label for="cat">Bike Category</label><select id="cat"><option value="All">All</option><option value="Sport/Supersport">Sport/Supersport</option><option value="Adventure/Dual-sport">Adventure/Dual-sport</option><option value="Dirt/Off-road">Dirt/Off-road</option><option value="Cruiser/Harley-style">Cruiser/Harley-style</option></select></div>
+    <div class="fg"><label for="make">Bike Make</label><select id="make"><option value="All">All</option></select></div>
+    <div class="fg"><label for="model">Bike Model</label><select id="model"><option value="All">All</option></select></div>
+    <div class="fg"><label for="brand">Brand</label><select id="brand"><option value="All">All</option></select></div>
+    <div class="fg"><label for="type">Type</label><select id="type"><option value="All">All</option><option value="slip-on">Slip-on</option><option value="full-system">Full System</option><option value="mid-pipe">Mid-pipe</option></select></div>
+    <div class="fg"><label for="mat">Material</label><select id="mat"><option value="All">All</option><option value="titanium">Titanium</option><option value="carbon">Carbon</option><option value="stainless">Stainless</option><option value="aluminum">Aluminum</option></select></div>
+    <div class="fg"><label for="price">Price Range</label><select id="price"><option value="All">All</option><option value="$">$</option><option value="$$">$$</option><option value="$$$">$$$</option><option value="$$$$">$$$$</option></select></div>
+    <div class="fg"><label for="sort">Sort</label><select id="sort"><option value="default">Default</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="db-desc">dB: Loudest First</option><option value="weight-desc">Weight Savings: Most First</option></select></div>
+    <div class="fg"><label for="ver">Fitment Status</label><select id="ver"><option value="All">All</option><option value="verified">Verified</option><option value="candidate">Candidate</option></select></div>
+    <div class="fg search"><label for="search">Text Search</label><input id="search" type="search" placeholder="Brand, product, bike, or tag" aria-label="Search exhausts"></div>
+  </div>
+  <div class="meta"><span id="count">Showing 0 of 0 exhausts</span><span id="status" role="status" aria-live="polite"></span></div>
+</header>
+<main id="main"><section id="grid" aria-live="polite"></section><div id="loadWrap" class="load-wrap" hidden><button id="loadMore" class="btn" type="button" aria-label="Load more exhaust cards">Load More</button></div><section id="empty" hidden><h2>No Exhausts Found</h2><p>Try adjusting your filters.</p><button id="emptyReset" class="btn accent" type="button">Reset Filters</button></section></main>
+<div id="ov" aria-hidden="true"></div>
+<aside id="drawer" aria-hidden="true">
+  <div class="dh"><h2 id="usedTitle">Used Listings</h2><button id="closeDrawer" class="btn" type="button" aria-label="Close used listings">Close</button></div>
+  <p class="dsub">Search a ZIP code and launch live listing platforms for this setup.</p>
+  <div class="zr"><div><label for="zip">ZIP Code</label><input id="zip" type="text" maxlength="5" inputmode="numeric" placeholder="e.g. 94110" aria-label="ZIP code"></div><button id="zipBtn" class="btn accent" type="button">Search</button></div>
+  <div id="links"></div>
+  <p class="mnote">Tap a platform above to view live listings near you.</p>
+  <div id="mapStatus" role="status" aria-live="polite"></div>
+  <div id="map" aria-label="Map showing 100 mile search radius"></div>
+</aside>
+<div id="bar" hidden><span id="cc">0 selected</span><div class="ba"><button id="openCmp" class="btn accent" type="button">Compare</button><button id="clearCmp" class="btn" type="button">Clear</button></div></div>
+<div id="modal" aria-hidden="true"><div class="mbg" data-close="1"></div><section class="md" role="dialog" aria-modal="true" aria-labelledby="cmpTitle"><div class="mh"><h2 id="cmpTitle">Exhaust Comparison</h2><button id="closeCmp" class="btn" type="button">Close</button></div><div class="mw"><table id="ct"><thead></thead><tbody></tbody></table></div></section></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+"use strict";
+
+const STORE = { fav: "motoexhaust:favorites:v1", theme: "motoexhaust:theme:v1" };
+const DATASET_URL = "./data/generated/exhaust_dataset.json";
+const getInitialVisibleLimit = () => (window.innerWidth <= 767 ? 24 : 90);
+
+let EXHAUST_DATA = [];
+let XMAP = new Map();
+
+const state = {
+  category: "All",
+  make: "All",
+  model: "All",
+  brand: "All",
+  type: "All",
+  material: "All",
+  priceRange: "All",
+  sortBy: "default",
+  verificationStatus: "All",
+  text: "",
+  garageOnly: false,
+  visibleLimit: getInitialVisibleLimit(),
+  theme: localStorage.getItem(STORE.theme) === "light" ? "light" : "dark"
+};
+
+let favorites = new Set();
+const compare = new Set();
+const used = { id: null, zip: "", lat: null, lng: null };
+let results = [];
+let searchTimer = null;
+let lastGeo = 0;
+let geoAbort = null;
+let geoToken = 0;
+let map = null;
+let marker = null;
+let circle = null;
+let statusTimer = null;
+
+const $ = (id) => document.getElementById(id);
+const el = {
+  cat: $("cat"),
+  make: $("make"),
+  model: $("model"),
+  brand: $("brand"),
+  type: $("type"),
+  mat: $("mat"),
+  price: $("price"),
+  sort: $("sort"),
+  ver: $("ver"),
+  search: $("search"),
+  filtersBtn: $("filtersBtn"),
+  reset: $("reset"),
+  emptyReset: $("emptyReset"),
+  theme: $("theme"),
+  garage: $("garage"),
+  export: $("export"),
+  count: $("count"),
+  status: $("status"),
+  grid: $("grid"),
+  loadWrap: $("loadWrap"),
+  loadMore: $("loadMore"),
+  empty: $("empty"),
+  ov: $("ov"),
+  drawer: $("drawer"),
+  usedTitle: $("usedTitle"),
+  closeDrawer: $("closeDrawer"),
+  zip: $("zip"),
+  zipBtn: $("zipBtn"),
+  links: $("links"),
+  mapStatus: $("mapStatus"),
+  map: $("map"),
+  bar: $("bar"),
+  cc: $("cc"),
+  openCmp: $("openCmp"),
+  clearCmp: $("clearCmp"),
+  modal: $("modal"),
+  closeCmp: $("closeCmp"),
+  thead: document.querySelector("#ct thead"),
+  tbody: document.querySelector("#ct tbody")
+};
+
+const esc = (value) => String(value)
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;")
+  .replace(/'/g, "&#39;");
+
+const uniqSort = (values) => [...new Set(values)].sort((a, b) => a.localeCompare(b));
+
+const fmtType = (type) => type === "full-system" ? "Full System" : type === "mid-pipe" ? "Mid-pipe" : "Slip-on";
+const fmtMat = (material) => material === "stainless" ? "Stainless Steel" : material.charAt(0).toUpperCase() + material.slice(1);
+const fDb = (db, note) => db == null ? (note || "Manufacturer not specified.") : `${db} dB`;
+const fWt = (weight) => weight == null ? "Unknown" : `${Number(weight).toFixed(1)} lb`;
+
+function applyTheme(theme) {
+  state.theme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
+  el.theme.textContent = theme === "dark" ? "Theme: Dark" : "Theme: Light";
+  localStorage.setItem(STORE.theme, theme);
+}
+
+function msg(text) {
+  el.status.textContent = text;
+  clearTimeout(statusTimer);
+  statusTimer = setTimeout(() => {
+    el.status.textContent = "";
+  }, 4200);
+}
+
+function loadFavorites() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORE.fav) || "[]");
+    if (!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.filter((id) => XMAP.has(id)));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFav() {
+  localStorage.setItem(STORE.fav, JSON.stringify([...favorites]));
+}
+
+async function loadDataset() {
+  try {
+    const response = await fetch(DATASET_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const raw = await response.json();
+    if (!Array.isArray(raw)) throw new Error("Dataset payload is not an array");
+
+    EXHAUST_DATA = raw.map((row, idx) => ({
+      id: row.id || `row-${idx}`,
+      brand: row.brand || "Unknown",
+      productName: row.productName || "Unknown Product",
+      type: row.type || "slip-on",
+      bikeCategory: row.bikeCategory || "Sport/Supersport",
+      bikeMake: row.bikeMake || "Unknown",
+      bikeModel: row.bikeModel || "Unknown",
+      bikeYears: row.bikeYears || "Unknown",
+      material: row.material || "stainless",
+      weightSavingsLbs: row.weightSavingsLbs ?? null,
+      dbRating: row.dbRating ?? null,
+      dbRatingNote: row.dbRatingNote || "Manufacturer not specified.",
+      priceUSD: Number.isFinite(row.priceUSD) ? row.priceUSD : 0,
+      priceRange: row.priceRange || "$$$",
+      description: row.description || "No description available.",
+      pros: Array.isArray(row.pros) ? row.pros.slice(0, 3) : ["No pros provided"],
+      cons: Array.isArray(row.cons) ? row.cons.slice(0, 3) : ["No cons provided"],
+      competitorComparisons: Array.isArray(row.competitorComparisons) ? row.competitorComparisons : [],
+      brandListingUrl: row.brandListingUrl || "https://www.google.com/search?q=motorcycle+exhaust",
+      youtubeSearchQuery: row.youtubeSearchQuery || `${row.brand || "exhaust"} ${row.productName || "sound"}`,
+      tags: Array.isArray(row.tags) ? row.tags : [],
+      verificationStatus: row.verificationStatus || "candidate",
+      fitmentSourceUrl: row.fitmentSourceUrl || "",
+      fitmentNotes: row.fitmentNotes || ""
+    }));
+
+    XMAP = new Map(EXHAUST_DATA.map((item) => [item.id, item]));
+    favorites = loadFavorites();
+    msg(`Loaded ${EXHAUST_DATA.length} exhaust fitments from external dataset.`);
+  } catch (error) {
+    EXHAUST_DATA = [];
+    XMAP = new Map();
+    favorites = new Set();
+    msg("Failed to load dataset. Run local server and refresh_data workflow.");
+    console.error(error);
+  }
+}
+
+function fillBrand() {
+  const brands = uniqSort(EXHAUST_DATA.map((entry) => entry.brand));
+  el.brand.innerHTML = `<option value="All">All</option>${brands.map((brand) => `<option value="${esc(brand)}">${esc(brand)}</option>`).join("")}`;
+  el.brand.value = state.brand;
+}
+
+function fillMake() {
+  const makes = uniqSort(
+    EXHAUST_DATA
+      .filter((entry) => state.category === "All" || entry.bikeCategory === state.category)
+      .map((entry) => entry.bikeMake)
+  );
+  el.make.innerHTML = `<option value="All">All</option>${makes.map((make) => `<option value="${esc(make)}">${esc(make)}</option>`).join("")}`;
+  if (!makes.includes(state.make)) state.make = "All";
+  el.make.value = state.make;
+}
+
+function fillModel() {
+  const models = uniqSort(
+    EXHAUST_DATA
+      .filter((entry) => state.category === "All" || entry.bikeCategory === state.category)
+      .filter((entry) => state.make === "All" || entry.bikeMake === state.make)
+      .map((entry) => entry.bikeModel)
+  );
+  el.model.innerHTML = `<option value="All">All</option>${models.map((model) => `<option value="${esc(model)}">${esc(model)}</option>`).join("")}`;
+  if (!models.includes(state.model)) state.model = "All";
+  el.model.value = state.model;
+}
+
+function resetVisibleLimit() {
+  state.visibleLimit = getInitialVisibleLimit();
+}
+
+function filterData() {
+  const q = state.text.trim().toLowerCase();
+  const out = EXHAUST_DATA.filter((entry) => {
+    if (state.category !== "All" && entry.bikeCategory !== state.category) return false;
+    if (state.make !== "All" && entry.bikeMake !== state.make) return false;
+    if (state.model !== "All" && entry.bikeModel !== state.model) return false;
+    if (state.brand !== "All" && entry.brand !== state.brand) return false;
+    if (state.type !== "All" && entry.type !== state.type) return false;
+    if (state.material !== "All" && entry.material !== state.material) return false;
+    if (state.priceRange !== "All" && entry.priceRange !== state.priceRange) return false;
+    if (state.verificationStatus !== "All" && (entry.verificationStatus || "candidate") !== state.verificationStatus) return false;
+    if (state.garageOnly && !favorites.has(entry.id)) return false;
+    if (q) {
+      const hay = [entry.brand, entry.productName, entry.bikeMake, entry.bikeModel, entry.description, (entry.tags || []).join(" ")].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  switch (state.sortBy) {
+    case "price-asc":
+      out.sort((a, b) => a.priceUSD - b.priceUSD);
+      break;
+    case "price-desc":
+      out.sort((a, b) => b.priceUSD - a.priceUSD);
+      break;
+    case "db-desc":
+      out.sort((a, b) => a.dbRating == null ? 1 : b.dbRating == null ? -1 : b.dbRating - a.dbRating);
+      break;
+    case "weight-desc":
+      out.sort((a, b) => a.weightSavingsLbs == null ? 1 : b.weightSavingsLbs == null ? -1 : b.weightSavingsLbs - a.weightSavingsLbs);
+      break;
+    default:
+      out.sort((a, b) => a.bikeMake.localeCompare(b.bikeMake) || a.bikeModel.localeCompare(b.bikeModel) || a.brand.localeCompare(b.brand));
+  }
+
+  return out;
+}
+
+function renderCard(entry, idx) {
+  const fav = favorites.has(entry.id);
+  const cmp = compare.has(entry.id);
+  const ver = (entry.verificationStatus || "candidate").toUpperCase();
+
+  const animDelay = idx < 30 ? Math.min(idx * 12, 250) : 0;
+  return `<article class="card" style="animation-delay:${animDelay}ms" data-id="${esc(entry.id)}">
+    <button class="fav ${fav ? "on" : ""}" data-act="fav" data-id="${esc(entry.id)}" type="button" aria-label="${fav ? "Remove from favorites" : "Save to favorites"}">${fav ? "♥" : "♡"}</button>
+    <div class="top"><h3 class="brand">${esc(entry.brand)}</h3><span class="type">${esc(fmtType(entry.type))}</span></div>
+    <h4 class="pn">${esc(entry.productName)}</h4>
+    <p class="fit">${esc(entry.bikeYears)} ${esc(entry.bikeMake)} ${esc(entry.bikeModel)}</p>
+    <div class="attrs">
+      <span class="chip">Status: ${esc(ver)}</span>
+      <span class="chip">Material: ${esc(fmtMat(entry.material))}</span>
+      <span class="chip">dB: ${esc(fDb(entry.dbRating, entry.dbRatingNote))}</span>
+      <span class="chip">Weight: ${esc(fWt(entry.weightSavingsLbs))}</span>
+      <span class="chip">Price: ${esc(entry.priceRange)} ($${Number(entry.priceUSD).toLocaleString()})</span>
+    </div>
+    <p class="desc">${esc(entry.description)}</p>
+    <div class="pc">
+      <div><p class="pt">Pros</p><ul class="pl">${entry.pros.slice(0, 3).map((item) => `<li class="pi g"><span class="mk">✓</span><span>${esc(item)}</span></li>`).join("")}</ul></div>
+      <div><p class="pt">Cons</p><ul class="pl">${entry.cons.slice(0, 3).map((item) => `<li class="pi b"><span class="mk">✗</span><span>${esc(item)}</span></li>`).join("")}</ul></div>
+    </div>
+    <div class="comp">${entry.competitorComparisons.slice(0, 2).map((c) => `<details><summary>vs. ${esc(c.brand)} ${esc(c.product)}</summary><p>${esc(c.summary)}</p></details>`).join("")}</div>
+    <div class="cactions">
+      <button class="ab" type="button" data-act="brand" data-id="${esc(entry.id)}">🔗 Brand Listing</button>
+      <button class="ab" type="button" data-act="yt" data-id="${esc(entry.id)}">▶ Sound on YouTube</button>
+      <button class="ab" type="button" data-act="used" data-id="${esc(entry.id)}">📍 Find Used</button>
+    </div>
+    <label class="cm"><input type="checkbox" data-act="cmp" data-id="${esc(entry.id)}" ${cmp ? "checked" : ""}><span>Add to Compare</span></label>
+  </article>`;
+}
+
+function updateBar() {
+  el.cc.textContent = `${compare.size} selected`;
+  el.bar.hidden = compare.size < 2;
+}
+
+function render() {
+  results = filterData();
+  el.count.textContent = `Showing ${results.length} of ${EXHAUST_DATA.length} exhausts`;
+  updateBar();
+
+  if (!results.length) {
+    el.grid.innerHTML = "";
+    el.loadWrap.hidden = true;
+    el.empty.hidden = false;
+    return;
+  }
+
+  el.empty.hidden = true;
+  const visible = results.slice(0, state.visibleLimit);
+  el.grid.innerHTML = visible.map((entry, idx) => renderCard(entry, idx)).join("");
+
+  if (results.length > visible.length) {
+    el.loadWrap.hidden = false;
+    el.loadMore.textContent = `Load More (${results.length - visible.length} remaining)`;
+  } else {
+    el.loadWrap.hidden = true;
+  }
+}
+
+function openUrl(url) {
+  window.open(url, "_blank", "noopener");
+}
+
+function ytUrl(query) {
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+}
+
+function toggleFav(id) {
+  if (favorites.has(id)) favorites.delete(id);
+  else favorites.add(id);
+  saveFav();
+  render();
+}
+
+function resetFilters() {
+  state.category = "All";
+  state.make = "All";
+  state.model = "All";
+  state.brand = "All";
+  state.type = "All";
+  state.material = "All";
+  state.priceRange = "All";
+  state.sortBy = "default";
+  state.verificationStatus = "All";
+  state.text = "";
+  state.garageOnly = false;
+  resetVisibleLimit();
+
+  el.cat.value = "All";
+  fillMake();
+  fillModel();
+  el.brand.value = "All";
+  el.type.value = "All";
+  el.mat.value = "All";
+  el.price.value = "All";
+  el.sort.value = "default";
+  el.ver.value = "All";
+  el.search.value = "";
+  el.garage.dataset.active = "false";
+  el.garage.textContent = "My Garage: Off";
+  document.body.classList.remove("filters-open");
+  render();
+  msg("Filters reset.");
+}
+
+function cardClick(event) {
+  const button = event.target.closest("button[data-act]");
+  if (!button) return;
+  const action = button.dataset.act;
+  const entry = XMAP.get(button.dataset.id || "");
+  if (!entry) return;
+
+  if (action === "fav") return toggleFav(entry.id);
+  if (action === "brand") return openUrl(entry.brandListingUrl);
+  if (action === "yt") return openUrl(ytUrl(entry.youtubeSearchQuery));
+  if (action === "used") return openUsed(entry.id);
+}
+
+function cardChange(event) {
+  const input = event.target;
+  if (input.dataset.act !== "cmp") return;
+  const id = input.dataset.id;
+  if (!id) return;
+  if (input.checked) {
+    if (compare.size >= 4) {
+      input.checked = false;
+      msg("Compare mode allows up to 4 exhausts.");
+      return;
+    }
+    compare.add(id);
+  } else {
+    compare.delete(id);
+  }
+  updateBar();
+}
+
+function linksFor(entry, zip) {
+  const query = `${entry.brand} ${entry.productName} ${entry.bikeMake} ${entry.bikeModel} exhaust`;
+  const eq = encodeURIComponent(query);
+  return [
+    { n: "Facebook Marketplace", u: `https://www.facebook.com/marketplace/search/?query=${eq}` },
+    { n: "Craigslist via SearchTempest", u: `https://www.searchtempest.com/search?query=${eq}&zip=${encodeURIComponent(zip)}&radius=100&cats=mca` },
+    { n: "OfferUp", u: `https://offerup.com/search/?q=${eq}` },
+    { n: "eBay Motors", u: `https://www.ebay.com/sch/i.html?_nkw=${eq}&_sacat=6000` },
+    { n: "CycleTrader", u: `https://www.cycletrader.com/search-results?keyword=${eq}` }
+  ];
+}
+
+function drawLinks(entry, zip) {
+  el.links.innerHTML = linksFor(entry, zip)
+    .map((item) => `<button class="mb" type="button" data-url="${esc(item.u)}" aria-label="Open ${esc(item.n)} in new tab">${esc(item.n)}</button>`)
+    .join("");
+}
+
+function killMap() {
+  if (map) {
+    map.remove();
+    map = null;
+  }
+  marker = null;
+  circle = null;
+}
+
+function putMap(lat, lng) {
+  if (!window.L) {
+    el.mapStatus.textContent = "Map library unavailable.";
+    return;
+  }
+  killMap();
+  map = L.map(el.map, { zoomControl: true }).setView([lat, lng], 9);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  marker = L.marker([lat, lng]).addTo(map).bindPopup("Searching within ~100 miles").openPopup();
+  circle = L.circle([lat, lng], {
+    radius: 160934,
+    color: "#ff6a00",
+    weight: 1.5,
+    fillColor: "#ff6a00",
+    fillOpacity: 0.08
+  }).addTo(map);
+
+  setTimeout(() => {
+    if (map) map.invalidateSize();
+  }, 250);
+}
+
+async function geocode(zip) {
+  const token = ++geoToken;
+  if (geoAbort) geoAbort.abort();
+  geoAbort = new AbortController();
+
+  const wait = Math.max(0, 1000 - (Date.now() - lastGeo));
+  if (wait) await new Promise((resolve) => setTimeout(resolve, wait));
+  lastGeo = Date.now();
+
+  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(zip)}&format=json&countrycodes=us&limit=1`;
+  el.mapStatus.textContent = "Locating ZIP on map...";
+
+  try {
+    // Nominatim expects User-Agent/Referer identification. Browsers send Referer in normal personal-use contexts.
+    const response = await fetch(url, {
+      signal: geoAbort.signal,
+      headers: { Accept: "application/json" }
+    });
+    if (!response.ok) throw new Error("Geocode request failed");
+    const payload = await response.json();
+    if (token !== geoToken) return;
+
+    if (!Array.isArray(payload) || !payload.length) {
+      used.lat = null;
+      used.lng = null;
+      el.mapStatus.textContent = "ZIP not found. Try another 5-digit US ZIP.";
+      killMap();
+      return;
+    }
+
+    used.lat = Number.parseFloat(payload[0].lat);
+    used.lng = Number.parseFloat(payload[0].lon);
+    el.mapStatus.textContent = `Map centered on ${zip}.`;
+    putMap(used.lat, used.lng);
+  } catch (error) {
+    if (error.name === "AbortError") return;
+    el.mapStatus.textContent = "Unable to geocode ZIP right now. Try again shortly.";
+  }
+}
+
+function openUsed(id) {
+  const entry = XMAP.get(id);
+  if (!entry) return;
+  used.id = id;
+  el.usedTitle.textContent = `Used Listings — ${entry.productName} for ${entry.bikeModel}`;
+  el.links.innerHTML = "";
+  el.mapStatus.textContent = "Enter ZIP and tap Search to map a 100-mile radius.";
+  el.drawer.classList.add("open");
+  el.drawer.setAttribute("aria-hidden", "false");
+  el.ov.classList.add("open");
+  el.ov.setAttribute("aria-hidden", "false");
+  document.body.classList.add("drawer-open");
+  el.zip.focus();
+}
+
+function closeUsed() {
+  el.drawer.classList.remove("open");
+  el.drawer.setAttribute("aria-hidden", "true");
+  el.ov.classList.remove("open");
+  el.ov.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("drawer-open");
+}
+
+function doZip() {
+  const zip = el.zip.value.trim();
+  if (!/^\d{5}$/.test(zip)) {
+    el.mapStatus.textContent = "Enter a valid 5-digit US ZIP code.";
+    return;
+  }
+  if (!used.id || !XMAP.has(used.id)) {
+    el.mapStatus.textContent = "Select an exhaust entry first.";
+    return;
+  }
+  used.zip = zip;
+  drawLinks(XMAP.get(used.id), zip);
+  geocode(zip);
+}
+
+function openCompare() {
+  const entries = [...compare].map((id) => XMAP.get(id)).filter(Boolean).slice(0, 4);
+  if (entries.length < 2) {
+    msg("Select at least 2 exhausts to compare.");
+    return;
+  }
+
+  el.thead.innerHTML = `<tr><th>Attribute</th>${entries.map((entry) => `<th>${esc(entry.brand)} ${esc(entry.productName)}<br><small>${esc(entry.bikeModel)}</small></th>`).join("")}</tr>`;
+  const rows = [
+    ["Status", (entry) => entry.verificationStatus || "candidate"],
+    ["Type", (entry) => fmtType(entry.type)],
+    ["Fitment", (entry) => `${entry.bikeYears} ${entry.bikeMake} ${entry.bikeModel}`],
+    ["Material", (entry) => fmtMat(entry.material)],
+    ["Price", (entry) => `${entry.priceRange} ($${Number(entry.priceUSD).toLocaleString()})`],
+    ["dB Rating", (entry) => entry.dbRating == null ? entry.dbRatingNote : `${entry.dbRating} dB`],
+    ["Weight Savings", (entry) => entry.weightSavingsLbs == null ? "Unknown" : `${Number(entry.weightSavingsLbs).toFixed(1)} lb`],
+    ["Pros", (entry) => (entry.pros || []).join("; ")],
+    ["Cons", (entry) => (entry.cons || []).join("; ")]
+  ];
+  el.tbody.innerHTML = rows.map(([label, getter]) => `<tr><th scope="row">${esc(label)}</th>${entries.map((entry) => `<td>${esc(getter(entry))}</td>`).join("")}</tr>`).join("");
+  el.modal.classList.add("open");
+  el.modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeCompare() {
+  el.modal.classList.remove("open");
+  el.modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+function clearCompare() {
+  compare.clear();
+  render();
+  msg("Compare selection cleared.");
+}
+
+async function clipText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch {
+    ok = false;
+  }
+  ta.remove();
+  return ok;
+}
+
+async function exportList() {
+  if (!results.length) {
+    msg("No filtered results to copy.");
+    return;
+  }
+
+  const lines = [
+    `MotoExhaust Export (${new Date().toLocaleString()})`,
+    `Showing ${results.length} of ${EXHAUST_DATA.length} exhausts`,
+    ""
+  ];
+
+  results.forEach((entry, idx) => {
+    lines.push(`${idx + 1}. ${entry.bikeYears} ${entry.bikeMake} ${entry.bikeModel} | ${entry.brand} ${entry.productName} | ${entry.verificationStatus || "candidate"} | ${entry.priceRange} ($${entry.priceUSD})`);
+  });
+
+  const ok = await clipText(lines.join("\n"));
+  msg(ok ? "Filtered list copied to clipboard." : "Clipboard copy failed in this browser context.");
+}
+
+function bind() {
+  el.cat.addEventListener("change", () => {
+    state.category = el.cat.value;
+    state.make = "All";
+    state.model = "All";
+    fillMake();
+    fillModel();
+    resetVisibleLimit();
+    render();
+  });
+  el.make.addEventListener("change", () => {
+    state.make = el.make.value;
+    state.model = "All";
+    fillModel();
+    resetVisibleLimit();
+    render();
+  });
+  el.model.addEventListener("change", () => {
+    state.model = el.model.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.brand.addEventListener("change", () => {
+    state.brand = el.brand.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.type.addEventListener("change", () => {
+    state.type = el.type.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.mat.addEventListener("change", () => {
+    state.material = el.mat.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.price.addEventListener("change", () => {
+    state.priceRange = el.price.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.sort.addEventListener("change", () => {
+    state.sortBy = el.sort.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.ver.addEventListener("change", () => {
+    state.verificationStatus = el.ver.value;
+    resetVisibleLimit();
+    render();
+  });
+  el.search.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      state.text = el.search.value;
+      resetVisibleLimit();
+      render();
+    }, 300);
+  });
+
+  el.reset.addEventListener("click", resetFilters);
+  el.emptyReset.addEventListener("click", resetFilters);
+  el.export.addEventListener("click", exportList);
+  if (el.loadMore) {
+    el.loadMore.addEventListener("click", () => {
+      state.visibleLimit += getInitialVisibleLimit();
+      render();
+    });
+  }
+  if (el.filtersBtn) {
+    el.filtersBtn.addEventListener("click", () => {
+      document.body.classList.toggle("filters-open");
+    });
+  }
+
+  el.theme.addEventListener("click", () => applyTheme(state.theme === "dark" ? "light" : "dark"));
+  el.garage.addEventListener("click", () => {
+    state.garageOnly = !state.garageOnly;
+    el.garage.dataset.active = state.garageOnly ? "true" : "false";
+    el.garage.textContent = state.garageOnly ? "My Garage: On" : "My Garage: Off";
+    render();
+  });
+
+  el.grid.addEventListener("click", cardClick);
+  el.grid.addEventListener("change", cardChange);
+
+  el.zipBtn.addEventListener("click", doZip);
+  el.zip.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") doZip();
+  });
+  el.links.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-url]");
+    if (button && button.dataset.url) openUrl(button.dataset.url);
+  });
+
+  el.closeDrawer.addEventListener("click", closeUsed);
+  el.ov.addEventListener("click", closeUsed);
+  el.openCmp.addEventListener("click", openCompare);
+  el.clearCmp.addEventListener("click", clearCompare);
+  el.closeCmp.addEventListener("click", closeCompare);
+  el.modal.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLElement && event.target.dataset.close === "1") closeCompare();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (el.modal.classList.contains("open")) closeCompare();
+    if (el.drawer.classList.contains("open")) closeUsed();
+    document.body.classList.remove("filters-open");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 767) {
+      document.body.classList.remove("filters-open");
+    }
+  });
+}
+
+async function init() {
+  applyTheme(state.theme);
+  bind();
+  await loadDataset();
+  resetVisibleLimit();
+  fillBrand();
+  fillMake();
+  fillModel();
+  render();
+}
+
+init();
+</script>
+</body>
+</html>

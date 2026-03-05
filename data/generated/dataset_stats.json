@@ -1,0 +1,28 @@
+{
+  "rows": 2973,
+  "status_counts": {
+    "candidate": 2973
+  },
+  "category_counts": {
+    "Sport/Supersport": 1343,
+    "Adventure/Dual-sport": 640,
+    "Cruiser/Harley-style": 602,
+    "Dirt/Off-road": 388
+  },
+  "brand_counts": {
+    "Akrapovic": 653,
+    "Arrow": 374,
+    "Delkevic": 6,
+    "SC Project": 171,
+    "Leovince": 68,
+    "Remus": 303,
+    "FMF": 230,
+    "Two Brothers": 225,
+    "Vance & Hines": 176,
+    "Termignoni": 44,
+    "M4": 166,
+    "Yoshimura": 305,
+    "Brocks": 160,
+    "Graves": 92
+  }
+}

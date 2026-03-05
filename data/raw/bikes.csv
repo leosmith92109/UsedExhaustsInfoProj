@@ -1,0 +1,314 @@
+bike_id,make,model,generation,year_start,year_end,bike_category,us_market,notes
+aprilia-dorsoduro-900-launch-2018-2020,Aprilia,Dorsoduro 900,Launch,2018,2020,Sport/Supersport,yes,USDM
+aprilia-rs-660-launch-2021-2023,Aprilia,RS 660,Launch,2021,2023,Sport/Supersport,yes,USDM
+aprilia-rs-660-current-2024-2026,Aprilia,RS 660,Current,2024,2026,Sport/Supersport,yes,USDM
+aprilia-rsv4-launch-2010-2014,Aprilia,RSV4,Launch,2010,2014,Sport/Supersport,yes,USDM
+aprilia-rsv4-rf-rr-2015-2020,Aprilia,RSV4,RF/RR,2015,2020,Sport/Supersport,yes,USDM
+aprilia-rsv4-current-2021-2026,Aprilia,RSV4,Current,2021,2026,Sport/Supersport,yes,USDM
+aprilia-shiver-900-launch-2018-2020,Aprilia,Shiver 900,Launch,2018,2020,Sport/Supersport,yes,USDM
+aprilia-tuareg-660-launch-2022-2026,Aprilia,Tuareg 660,Launch,2022,2026,Adventure/Dual-sport,yes,USDM
+aprilia-tuono-660-launch-2021-2023,Aprilia,Tuono 660,Launch,2021,2023,Sport/Supersport,yes,USDM
+aprilia-tuono-660-current-2024-2026,Aprilia,Tuono 660,Current,2024,2026,Sport/Supersport,yes,USDM
+aprilia-tuono-v4-launch-2012-2016,Aprilia,Tuono V4,Launch,2012,2016,Sport/Supersport,yes,USDM
+aprilia-tuono-v4-1100-2017-2020,Aprilia,Tuono V4,1100,2017,2020,Sport/Supersport,yes,USDM
+aprilia-tuono-v4-current-2021-2026,Aprilia,Tuono V4,Current,2021,2026,Sport/Supersport,yes,USDM
+bmw-f800gs-launch-2009-2012,BMW,F800GS,Launch,2009,2012,Adventure/Dual-sport,yes,USDM
+bmw-f800gs-refresh-2013-2018,BMW,F800GS,Refresh,2013,2018,Adventure/Dual-sport,yes,USDM
+bmw-f800gs-adventure-final-2019-2023,BMW,F800GS,Adventure Final,2019,2023,Adventure/Dual-sport,yes,USDM
+bmw-f850gs-launch-2019-2023,BMW,F850GS,Launch,2019,2023,Adventure/Dual-sport,yes,USDM
+bmw-f850gs-current-2024-2026,BMW,F850GS,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+bmw-f900gs-launch-2024-2026,BMW,F900GS,Launch,2024,2026,Adventure/Dual-sport,yes,USDM
+bmw-g310gs-launch-2018-2026,BMW,G310GS,Launch,2018,2026,Adventure/Dual-sport,yes,USDM
+bmw-m1000rr-launch-2021-2022,BMW,M1000RR,Launch,2021,2022,Sport/Supersport,yes,USDM
+bmw-m1000rr-current-2023-2026,BMW,M1000RR,Current,2023,2026,Sport/Supersport,yes,USDM
+bmw-r-ninet-launch-2014-2020,BMW,R nineT,Launch,2014,2020,Sport/Supersport,yes,USDM
+bmw-r-ninet-current-2021-2026,BMW,R nineT,Current,2021,2026,Sport/Supersport,yes,USDM
+bmw-r1200gs-hexhead-2004-2009,BMW,R1200GS,Hexhead,2004,2009,Adventure/Dual-sport,yes,USDM
+bmw-r1200gs-camhead-2010-2012,BMW,R1200GS,Camhead,2010,2012,Adventure/Dual-sport,yes,USDM
+bmw-r1200gs-lc-2013-2018,BMW,R1200GS,LC,2013,2018,Adventure/Dual-sport,yes,USDM
+bmw-r1250gs-launch-2019-2023,BMW,R1250GS,Launch,2019,2023,Adventure/Dual-sport,yes,USDM
+bmw-r1250gs-current-2024-2026,BMW,R1250GS,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+bmw-r18-launch-2021-2026,BMW,R18,Launch,2021,2026,Cruiser/Harley-style,yes,USDM
+bmw-s1000rr-k46-2010-2014,BMW,S1000RR,K46,2010,2014,Sport/Supersport,yes,USDM
+bmw-s1000rr-k46-refresh-2015-2018,BMW,S1000RR,K46 Refresh,2015,2018,Sport/Supersport,yes,USDM
+bmw-s1000rr-k67-2019-2022,BMW,S1000RR,K67,2019,2022,Sport/Supersport,yes,USDM
+bmw-s1000rr-current-2023-2026,BMW,S1000RR,Current,2023,2026,Sport/Supersport,yes,USDM
+ducati-desertx-launch-2022-2026,Ducati,DesertX,Launch,2022,2026,Adventure/Dual-sport,yes,USDM
+ducati-diavel-1260-launch-2019-2022,Ducati,Diavel 1260,Launch,2019,2022,Cruiser/Harley-style,yes,USDM
+ducati-diavel-v4-launch-2023-2026,Ducati,Diavel V4,Launch,2023,2026,Cruiser/Harley-style,yes,USDM
+ducati-hypermotard-950-launch-2019-2026,Ducati,Hypermotard 950,Launch,2019,2026,Sport/Supersport,yes,USDM
+ducati-monster-937-2022-2026,Ducati,Monster,937,2022,2026,Sport/Supersport,yes,USDM
+ducati-monster-1200-launch-2014-2021,Ducati,Monster 1200,Launch,2014,2021,Sport/Supersport,yes,USDM
+ducati-multistrada-1200-launch-2010-2014,Ducati,Multistrada 1200,Launch,2010,2014,Adventure/Dual-sport,yes,USDM
+ducati-multistrada-1200-dvt-2015-2017,Ducati,Multistrada 1200,DVT,2015,2017,Adventure/Dual-sport,yes,USDM
+ducati-multistrada-1260-launch-2018-2020,Ducati,Multistrada 1260,Launch,2018,2020,Adventure/Dual-sport,yes,USDM
+ducati-multistrada-v4-launch-2021-2023,Ducati,Multistrada V4,Launch,2021,2023,Adventure/Dual-sport,yes,USDM
+ducati-multistrada-v4-current-2024-2026,Ducati,Multistrada V4,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+ducati-panigale-1199-launch-2012-2014,Ducati,Panigale 1199,Launch,2012,2014,Sport/Supersport,yes,USDM
+ducati-panigale-1299-launch-2015-2017,Ducati,Panigale 1299,Launch,2015,2017,Sport/Supersport,yes,USDM
+ducati-panigale-v4-launch-2018-2021,Ducati,Panigale V4,Launch,2018,2021,Sport/Supersport,yes,USDM
+ducati-panigale-v4-current-2022-2026,Ducati,Panigale V4,Current,2022,2026,Sport/Supersport,yes,USDM
+ducati-scrambler-icon-800-2015-2022,Ducati,Scrambler Icon,800,2015,2022,Cruiser/Harley-style,yes,USDM
+ducati-scrambler-icon-current-2023-2026,Ducati,Scrambler Icon,Current,2023,2026,Cruiser/Harley-style,yes,USDM
+ducati-streetfighter-v4-launch-2020-2022,Ducati,Streetfighter V4,Launch,2020,2022,Sport/Supersport,yes,USDM
+ducati-streetfighter-v4-current-2023-2026,Ducati,Streetfighter V4,Current,2023,2026,Sport/Supersport,yes,USDM
+ducati-supersport-950-launch-2017-2020,Ducati,SuperSport 950,Launch,2017,2020,Sport/Supersport,yes,USDM
+ducati-supersport-950-current-2021-2026,Ducati,SuperSport 950,Current,2021,2026,Sport/Supersport,yes,USDM
+gasgas-ec-300-launch-2021-2026,GasGas,EC 300,Launch,2021,2026,Dirt/Off-road,yes,USDM
+gasgas-ex-350f-launch-2021-2026,GasGas,EX 350F,Launch,2021,2026,Dirt/Off-road,yes,USDM
+gasgas-ex-450f-launch-2021-2026,GasGas,EX 450F,Launch,2021,2026,Dirt/Off-road,yes,USDM
+gasgas-mc-250f-launch-2021-2026,GasGas,MC 250F,Launch,2021,2026,Dirt/Off-road,yes,USDM
+gasgas-mc-450f-launch-2021-2026,GasGas,MC 450F,Launch,2021,2026,Dirt/Off-road,yes,USDM
+harley-davidson-breakout-twin-cam-2013-2017,Harley-Davidson,Breakout,Twin Cam,2013,2017,Cruiser/Harley-style,yes,USDM
+harley-davidson-breakout-softail-2018-2026,Harley-Davidson,Breakout,Softail,2018,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-fat-bob-dyna-2008-2017,Harley-Davidson,Fat Bob,Dyna,2008,2017,Cruiser/Harley-style,yes,USDM
+harley-davidson-fat-bob-softail-2018-2026,Harley-Davidson,Fat Bob,Softail,2018,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-heritage-classic-twin-cam-2000-2017,Harley-Davidson,Heritage Classic,Twin Cam,2000,2017,Cruiser/Harley-style,yes,USDM
+harley-davidson-heritage-classic-softail-2018-2026,Harley-Davidson,Heritage Classic,Softail,2018,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-low-rider-s-dyna-2016-2017,Harley-Davidson,Low Rider S,Dyna,2016,2017,Cruiser/Harley-style,yes,USDM
+harley-davidson-low-rider-s-softail-2020-2026,Harley-Davidson,Low Rider S,Softail,2020,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-nightster-launch-2022-2026,Harley-Davidson,Nightster,Launch,2022,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-pan-america-1250-launch-2021-2026,Harley-Davidson,Pan America 1250,Launch,2021,2026,Adventure/Dual-sport,yes,USDM
+harley-davidson-road-glide-twin-cam-2000-2016,Harley-Davidson,Road Glide,Twin Cam,2000,2016,Cruiser/Harley-style,yes,USDM
+harley-davidson-road-glide-milwaukee-eight-2017-2023,Harley-Davidson,Road Glide,Milwaukee-Eight,2017,2023,Cruiser/Harley-style,yes,USDM
+harley-davidson-road-glide-current-2024-2026,Harley-Davidson,Road Glide,Current,2024,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-sportster-1200-rubber-mount-2004-2021,Harley-Davidson,Sportster 1200,Rubber Mount,2004,2021,Cruiser/Harley-style,yes,USDM
+harley-davidson-sportster-883-rubber-mount-2004-2020,Harley-Davidson,Sportster 883,Rubber Mount,2004,2020,Cruiser/Harley-style,yes,USDM
+harley-davidson-sportster-s-launch-2021-2026,Harley-Davidson,Sportster S,Launch,2021,2026,Cruiser/Harley-style,yes,USDM
+harley-davidson-street-glide-twin-cam-2006-2016,Harley-Davidson,Street Glide,Twin Cam,2006,2016,Cruiser/Harley-style,yes,USDM
+harley-davidson-street-glide-milwaukee-eight-2017-2023,Harley-Davidson,Street Glide,Milwaukee-Eight,2017,2023,Cruiser/Harley-style,yes,USDM
+harley-davidson-street-glide-current-2024-2026,Harley-Davidson,Street Glide,Current,2024,2026,Cruiser/Harley-style,yes,USDM
+honda-africa-twin-crf1000l-launch-2016-2017,Honda,Africa Twin CRF1000L,Launch,2016,2017,Adventure/Dual-sport,yes,USDM
+honda-africa-twin-crf1000l-adventure-sports-2018-2019,Honda,Africa Twin CRF1000L,Adventure Sports,2018,2019,Adventure/Dual-sport,yes,USDM
+honda-africa-twin-crf1100l-launch-2020-2023,Honda,Africa Twin CRF1100L,Launch,2020,2023,Adventure/Dual-sport,yes,USDM
+honda-africa-twin-crf1100l-current-2024-2026,Honda,Africa Twin CRF1100L,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+honda-cb500x-launch-2013-2018,Honda,CB500X,Launch,2013,2018,Adventure/Dual-sport,yes,USDM
+honda-cb500x-refresh-2019-2021,Honda,CB500X,Refresh,2019,2021,Adventure/Dual-sport,yes,USDM
+honda-cb500x-final-2022-2023,Honda,CB500X,Final,2022,2023,Adventure/Dual-sport,yes,USDM
+honda-cbr1000rr-sc57-2004-2007,Honda,CBR1000RR,SC57,2004,2007,Sport/Supersport,yes,USDM
+honda-cbr1000rr-sc59-2008-2011,Honda,CBR1000RR,SC59,2008,2011,Sport/Supersport,yes,USDM
+honda-cbr1000rr-sc59-refresh-2012-2016,Honda,CBR1000RR,SC59 Refresh,2012,2016,Sport/Supersport,yes,USDM
+honda-cbr1000rr-sc77-2017-2019,Honda,CBR1000RR,SC77,2017,2019,Sport/Supersport,yes,USDM
+honda-cbr1000rr-sc82-2020-2026,Honda,CBR1000RR,SC82,2020,2026,Sport/Supersport,yes,USDM
+honda-cbr300r-launch-2015-2018,Honda,CBR300R,Launch,2015,2018,Sport/Supersport,yes,USDM
+honda-cbr300r-abs-2019-2026,Honda,CBR300R,ABS,2019,2026,Sport/Supersport,yes,USDM
+honda-cbr500r-launch-2013-2015,Honda,CBR500R,Launch,2013,2015,Sport/Supersport,yes,USDM
+honda-cbr500r-midcycle-2016-2018,Honda,CBR500R,Midcycle,2016,2018,Sport/Supersport,yes,USDM
+honda-cbr500r-euro5-2019-2021,Honda,CBR500R,Euro5,2019,2021,Sport/Supersport,yes,USDM
+honda-cbr500r-current-2022-2026,Honda,CBR500R,Current,2022,2026,Sport/Supersport,yes,USDM
+honda-cbr600rr-pc37-2003-2006,Honda,CBR600RR,PC37,2003,2006,Sport/Supersport,yes,USDM
+honda-cbr600rr-pc40-2007-2012,Honda,CBR600RR,PC40,2007,2012,Sport/Supersport,yes,USDM
+honda-cbr600rr-pc40-refresh-2013-2016,Honda,CBR600RR,PC40 Refresh,2013,2016,Sport/Supersport,yes,USDM
+honda-cbr600rr-current-2021-2026,Honda,CBR600RR,Current,2021,2026,Sport/Supersport,yes,USDM
+honda-cbr650r-rh03-2019-2023,Honda,CBR650R,RH03,2019,2023,Sport/Supersport,yes,USDM
+honda-cbr650r-e-clutch-era-2024-2026,Honda,CBR650R,E-Clutch Era,2024,2026,Sport/Supersport,yes,USDM
+honda-crf250r-launch-2004-2009,Honda,CRF250R,Launch,2004,2009,Dirt/Off-road,yes,USDM
+honda-crf250r-efi-2010-2013,Honda,CRF250R,EFI,2010,2013,Dirt/Off-road,yes,USDM
+honda-crf250r-current-2014-2026,Honda,CRF250R,Current,2014,2026,Dirt/Off-road,yes,USDM
+honda-crf450r-efi-2009-2012,Honda,CRF450R,EFI,2009,2012,Dirt/Off-road,yes,USDM
+honda-crf450r-2nd-efi-2013-2016,Honda,CRF450R,2nd EFI,2013,2016,Dirt/Off-road,yes,USDM
+honda-crf450r-dohc-2017-2020,Honda,CRF450R,DOHC,2017,2020,Dirt/Off-road,yes,USDM
+honda-crf450r-current-2021-2026,Honda,CRF450R,Current,2021,2026,Dirt/Off-road,yes,USDM
+honda-crf450rl-launch-2019-2026,Honda,CRF450RL,Launch,2019,2026,Dirt/Off-road,yes,USDM
+honda-gold-wing-gl1800-early-2001-2011,Honda,Gold Wing,GL1800 Early,2001,2011,Cruiser/Harley-style,yes,USDM
+honda-gold-wing-gl1800-mid-2012-2017,Honda,Gold Wing,GL1800 Mid,2012,2017,Cruiser/Harley-style,yes,USDM
+honda-gold-wing-current-2018-2026,Honda,Gold Wing,Current,2018,2026,Cruiser/Harley-style,yes,USDM
+honda-nx500-launch-2024-2026,Honda,NX500,Launch,2024,2026,Adventure/Dual-sport,yes,USDM
+honda-rebel-1100-launch-2021-2024,Honda,Rebel 1100,Launch,2021,2024,Cruiser/Harley-style,yes,USDM
+honda-rebel-1100-se-dct-era-2025-2026,Honda,Rebel 1100,SE DCT Era,2025,2026,Cruiser/Harley-style,yes,USDM
+honda-rebel-500-launch-2017-2019,Honda,Rebel 500,Launch,2017,2019,Cruiser/Harley-style,yes,USDM
+honda-rebel-500-refresh-2020-2022,Honda,Rebel 500,Refresh,2020,2022,Cruiser/Harley-style,yes,USDM
+honda-rebel-500-current-2023-2026,Honda,Rebel 500,Current,2023,2026,Cruiser/Harley-style,yes,USDM
+husqvarna-fc-250-launch-2014-2018,Husqvarna,FC 250,Launch,2014,2018,Dirt/Off-road,yes,USDM
+husqvarna-fc-250-current-2019-2026,Husqvarna,FC 250,Current,2019,2026,Dirt/Off-road,yes,USDM
+husqvarna-fc-450-launch-2014-2018,Husqvarna,FC 450,Launch,2014,2018,Dirt/Off-road,yes,USDM
+husqvarna-fc-450-current-2019-2026,Husqvarna,FC 450,Current,2019,2026,Dirt/Off-road,yes,USDM
+husqvarna-fe-350-launch-2014-2019,Husqvarna,FE 350,Launch,2014,2019,Dirt/Off-road,yes,USDM
+husqvarna-fe-350-current-2020-2026,Husqvarna,FE 350,Current,2020,2026,Dirt/Off-road,yes,USDM
+husqvarna-fe-501-launch-2014-2019,Husqvarna,FE 501,Launch,2014,2019,Dirt/Off-road,yes,USDM
+husqvarna-fe-501-current-2020-2026,Husqvarna,FE 501,Current,2020,2026,Dirt/Off-road,yes,USDM
+husqvarna-norden-901-launch-2022-2026,Husqvarna,Norden 901,Launch,2022,2026,Adventure/Dual-sport,yes,USDM
+husqvarna-svartpilen-401-launch-2018-2023,Husqvarna,Svartpilen 401,Launch,2018,2023,Sport/Supersport,yes,USDM
+husqvarna-svartpilen-401-current-2024-2026,Husqvarna,Svartpilen 401,Current,2024,2026,Sport/Supersport,yes,USDM
+husqvarna-te-300i-launch-2018-2023,Husqvarna,TE 300i,Launch,2018,2023,Dirt/Off-road,yes,USDM
+husqvarna-te-300i-current-2024-2026,Husqvarna,TE 300i,Current,2024,2026,Dirt/Off-road,yes,USDM
+husqvarna-vitpilen-401-launch-2018-2023,Husqvarna,Vitpilen 401,Launch,2018,2023,Sport/Supersport,yes,USDM
+husqvarna-vitpilen-401-current-2024-2026,Husqvarna,Vitpilen 401,Current,2024,2026,Sport/Supersport,yes,USDM
+indian-challenger-launch-2020-2026,Indian,Challenger,Launch,2020,2026,Cruiser/Harley-style,yes,USDM
+indian-chief-thunder-stroke-2014-2021,Indian,Chief,Thunder Stroke,2014,2021,Cruiser/Harley-style,yes,USDM
+indian-chief-current-2022-2026,Indian,Chief,Current,2022,2026,Cruiser/Harley-style,yes,USDM
+indian-chieftain-launch-2014-2018,Indian,Chieftain,Launch,2014,2018,Cruiser/Harley-style,yes,USDM
+indian-chieftain-current-2019-2026,Indian,Chieftain,Current,2019,2026,Cruiser/Harley-style,yes,USDM
+indian-ftr-launch-2019-2021,Indian,FTR,Launch,2019,2021,Sport/Supersport,yes,USDM
+indian-ftr-current-2022-2026,Indian,FTR,Current,2022,2026,Sport/Supersport,yes,USDM
+indian-roadmaster-launch-2015-2018,Indian,Roadmaster,Launch,2015,2018,Cruiser/Harley-style,yes,USDM
+indian-roadmaster-current-2019-2026,Indian,Roadmaster,Current,2019,2026,Cruiser/Harley-style,yes,USDM
+indian-scout-launch-2015-2024,Indian,Scout,Launch,2015,2024,Cruiser/Harley-style,yes,USDM
+indian-scout-current-2025-2026,Indian,Scout,Current,2025,2026,Cruiser/Harley-style,yes,USDM
+indian-scout-bobber-launch-2018-2024,Indian,Scout Bobber,Launch,2018,2024,Cruiser/Harley-style,yes,USDM
+indian-scout-bobber-current-2025-2026,Indian,Scout Bobber,Current,2025,2026,Cruiser/Harley-style,yes,USDM
+indian-springfield-launch-2016-2026,Indian,Springfield,Launch,2016,2026,Cruiser/Harley-style,yes,USDM
+ktm-1290-super-adventure-t-2015-2020,KTM,1290 Super Adventure,T,2015,2020,Adventure/Dual-sport,yes,USDM
+ktm-1290-super-adventure-current-2021-2026,KTM,1290 Super Adventure,Current,2021,2026,Adventure/Dual-sport,yes,USDM
+ktm-1290-super-adventure-s-launch-2017-2020,KTM,1290 Super Adventure S,Launch,2017,2020,Adventure/Dual-sport,yes,USDM
+ktm-1290-super-adventure-s-current-2021-2026,KTM,1290 Super Adventure S,Current,2021,2026,Adventure/Dual-sport,yes,USDM
+ktm-1290-super-duke-r-launch-2014-2016,KTM,1290 Super Duke R,Launch,2014,2016,Sport/Supersport,yes,USDM
+ktm-1290-super-duke-r-2-0-2017-2019,KTM,1290 Super Duke R,2.0,2017,2019,Sport/Supersport,yes,USDM
+ktm-1290-super-duke-r-current-2020-2026,KTM,1290 Super Duke R,Current,2020,2026,Sport/Supersport,yes,USDM
+ktm-250-sx-f-launch-2006-2012,KTM,250 SX-F,Launch,2006,2012,Dirt/Off-road,yes,USDM
+ktm-250-sx-f-current-2013-2026,KTM,250 SX-F,Current,2013,2026,Dirt/Off-road,yes,USDM
+ktm-350-exc-f-launch-2012-2016,KTM,350 EXC-F,Launch,2012,2016,Dirt/Off-road,yes,USDM
+ktm-350-exc-f-current-2017-2026,KTM,350 EXC-F,Current,2017,2026,Dirt/Off-road,yes,USDM
+ktm-390-duke-launch-2015-2016,KTM,390 Duke,Launch,2015,2016,Sport/Supersport,yes,USDM
+ktm-390-duke-2017-2017-2023,KTM,390 Duke,2017,2017,2023,Sport/Supersport,yes,USDM
+ktm-390-duke-current-2024-2026,KTM,390 Duke,Current,2024,2026,Sport/Supersport,yes,USDM
+ktm-450-sx-f-rfs-2000-2006,KTM,450 SX-F,RFS,2000,2006,Dirt/Off-road,yes,USDM
+ktm-450-sx-f-xc4-2007-2012,KTM,450 SX-F,XC4,2007,2012,Dirt/Off-road,yes,USDM
+ktm-450-sx-f-current-2013-2026,KTM,450 SX-F,Current,2013,2026,Dirt/Off-road,yes,USDM
+ktm-500-exc-f-launch-2012-2016,KTM,500 EXC-F,Launch,2012,2016,Dirt/Off-road,yes,USDM
+ktm-500-exc-f-current-2017-2026,KTM,500 EXC-F,Current,2017,2026,Dirt/Off-road,yes,USDM
+ktm-690-enduro-r-efi-2009-2011,KTM,690 Enduro R,EFI,2009,2011,Adventure/Dual-sport,yes,USDM
+ktm-690-enduro-r-updated-2012-2018,KTM,690 Enduro R,Updated,2012,2018,Adventure/Dual-sport,yes,USDM
+ktm-690-enduro-r-current-2019-2026,KTM,690 Enduro R,Current,2019,2026,Adventure/Dual-sport,yes,USDM
+ktm-790-adventure-launch-2019-2020,KTM,790 Adventure,Launch,2019,2020,Adventure/Dual-sport,yes,USDM
+ktm-890-adventure-launch-2021-2023,KTM,890 Adventure,Launch,2021,2023,Adventure/Dual-sport,yes,USDM
+ktm-890-adventure-current-2024-2026,KTM,890 Adventure,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+ktm-890-duke-r-launch-2020-2023,KTM,890 Duke R,Launch,2020,2023,Sport/Supersport,yes,USDM
+ktm-890-duke-r-current-2024-2026,KTM,890 Duke R,Current,2024,2026,Sport/Supersport,yes,USDM
+ktm-rc-390-launch-2015-2019,KTM,RC 390,Launch,2015,2019,Sport/Supersport,yes,USDM
+ktm-rc-390-current-2022-2026,KTM,RC 390,Current,2022,2026,Sport/Supersport,yes,USDM
+kawasaki-klr650-gen2-2008-2018,Kawasaki,KLR650,Gen2,2008,2018,Adventure/Dual-sport,yes,USDM
+kawasaki-klr650-gen3-2022-2026,Kawasaki,KLR650,Gen3,2022,2026,Adventure/Dual-sport,yes,USDM
+kawasaki-kx250-launch-2004-2020,Kawasaki,KX250,Launch,2004,2020,Dirt/Off-road,yes,USDM
+kawasaki-kx250-current-2021-2026,Kawasaki,KX250,Current,2021,2026,Dirt/Off-road,yes,USDM
+kawasaki-kx450-carb-2006-2008,Kawasaki,KX450,Carb,2006,2008,Dirt/Off-road,yes,USDM
+kawasaki-kx450-efi-2009-2015,Kawasaki,KX450,EFI,2009,2015,Dirt/Off-road,yes,USDM
+kawasaki-kx450-current-2016-2026,Kawasaki,KX450,Current,2016,2026,Dirt/Off-road,yes,USDM
+kawasaki-ninja-1000sx-ninja-1000-2011-2016,Kawasaki,Ninja 1000SX,Ninja 1000,2011,2016,Sport/Supersport,yes,USDM
+kawasaki-ninja-1000sx-refresh-2017-2019,Kawasaki,Ninja 1000SX,Refresh,2017,2019,Sport/Supersport,yes,USDM
+kawasaki-ninja-1000sx-sx-2020-2026,Kawasaki,Ninja 1000SX,SX,2020,2026,Sport/Supersport,yes,USDM
+kawasaki-ninja-400-launch-2018-2026,Kawasaki,Ninja 400,Launch,2018,2026,Sport/Supersport,yes,USDM
+kawasaki-ninja-650-er-6f-2006-2011,Kawasaki,Ninja 650,ER-6f,2006,2011,Sport/Supersport,yes,USDM
+kawasaki-ninja-650-2012-2012-2016,Kawasaki,Ninja 650,2012,2012,2016,Sport/Supersport,yes,USDM
+kawasaki-ninja-650-current-2017-2026,Kawasaki,Ninja 650,Current,2017,2026,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-10r-2004-2004-2005,Kawasaki,Ninja ZX-10R,2004,2004,2005,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-10r-2006-2006-2010,Kawasaki,Ninja ZX-10R,2006,2006,2010,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-10r-2011-2011-2015,Kawasaki,Ninja ZX-10R,2011,2011,2015,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-10r-2016-2016-2020,Kawasaki,Ninja ZX-10R,2016,2016,2020,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-10r-current-2021-2026,Kawasaki,Ninja ZX-10R,Current,2021,2026,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-2003-2003-2004,Kawasaki,Ninja ZX-6R,2003,2003,2004,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-636-2005-2006,Kawasaki,Ninja ZX-6R,636,2005,2006,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-599-2007-2008,Kawasaki,Ninja ZX-6R,599,2007,2008,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-2009-2009-2012,Kawasaki,Ninja ZX-6R,2009,2009,2012,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-636-return-2013-2018,Kawasaki,Ninja ZX-6R,636 Return,2013,2018,Sport/Supersport,yes,USDM
+kawasaki-ninja-zx-6r-current-2019-2026,Kawasaki,Ninja ZX-6R,Current,2019,2026,Sport/Supersport,yes,USDM
+kawasaki-versys-1000-launch-2015-2018,Kawasaki,Versys 1000,Launch,2015,2018,Adventure/Dual-sport,yes,USDM
+kawasaki-versys-1000-current-2019-2026,Kawasaki,Versys 1000,Current,2019,2026,Adventure/Dual-sport,yes,USDM
+kawasaki-versys-650-launch-2008-2009,Kawasaki,Versys 650,Launch,2008,2009,Adventure/Dual-sport,yes,USDM
+kawasaki-versys-650-2010-2010-2014,Kawasaki,Versys 650,2010,2010,2014,Adventure/Dual-sport,yes,USDM
+kawasaki-versys-650-2015-2015-2021,Kawasaki,Versys 650,2015,2015,2021,Adventure/Dual-sport,yes,USDM
+kawasaki-versys-650-current-2022-2026,Kawasaki,Versys 650,Current,2022,2026,Adventure/Dual-sport,yes,USDM
+kawasaki-vulcan-1700-vaquero-launch-2011-2024,Kawasaki,Vulcan 1700 Vaquero,Launch,2011,2024,Cruiser/Harley-style,yes,USDM
+kawasaki-vulcan-s-launch-2015-2026,Kawasaki,Vulcan S,Launch,2015,2026,Cruiser/Harley-style,yes,USDM
+moto-guzzi-california-1400-launch-2013-2020,Moto Guzzi,California 1400,Launch,2013,2020,Cruiser/Harley-style,yes,USDM
+moto-guzzi-mgx-21-launch-2017-2020,Moto Guzzi,MGX-21,Launch,2017,2020,Cruiser/Harley-style,yes,USDM
+moto-guzzi-stelvio-1200-2009-2017,Moto Guzzi,Stelvio,1200,2009,2017,Adventure/Dual-sport,yes,USDM
+moto-guzzi-stelvio-1042-2024-2026,Moto Guzzi,Stelvio,1042,2024,2026,Adventure/Dual-sport,yes,USDM
+moto-guzzi-v7-classic-2009-2016,Moto Guzzi,V7,Classic,2009,2016,Cruiser/Harley-style,yes,USDM
+moto-guzzi-v7-iii-2017-2020,Moto Guzzi,V7,III,2017,2020,Cruiser/Harley-style,yes,USDM
+moto-guzzi-v7-850-2021-2026,Moto Guzzi,V7,850,2021,2026,Cruiser/Harley-style,yes,USDM
+moto-guzzi-v85-tt-launch-2020-2023,Moto Guzzi,V85 TT,Launch,2020,2023,Adventure/Dual-sport,yes,USDM
+moto-guzzi-v85-tt-current-2024-2026,Moto Guzzi,V85 TT,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+moto-guzzi-v9-bobber-launch-2017-2020,Moto Guzzi,V9 Bobber,Launch,2017,2020,Cruiser/Harley-style,yes,USDM
+moto-guzzi-v9-bobber-current-2021-2026,Moto Guzzi,V9 Bobber,Current,2021,2026,Cruiser/Harley-style,yes,USDM
+suzuki-boulevard-c50-launch-2005-2019,Suzuki,Boulevard C50,Launch,2005,2019,Cruiser/Harley-style,yes,USDM
+suzuki-boulevard-m109r-launch-2006-2026,Suzuki,Boulevard M109R,Launch,2006,2026,Cruiser/Harley-style,yes,USDM
+suzuki-dr-z400s-launch-2000-2026,Suzuki,DR-Z400S,Launch,2000,2026,Adventure/Dual-sport,yes,USDM
+suzuki-gsx-8r-launch-2024-2026,Suzuki,GSX-8R,Launch,2024,2026,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-k1-2001-2002,Suzuki,GSX-R1000,K1,2001,2002,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-k3-2003-2004,Suzuki,GSX-R1000,K3,2003,2004,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-k5-2005-2006,Suzuki,GSX-R1000,K5,2005,2006,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-k7-2007-2008,Suzuki,GSX-R1000,K7,2007,2008,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-l0-2009-2016,Suzuki,GSX-R1000,L0,2009,2016,Sport/Supersport,yes,USDM
+suzuki-gsx-r1000-l7-2017-2026,Suzuki,GSX-R1000,L7,2017,2026,Sport/Supersport,yes,USDM
+suzuki-gsx-r600-k1-2001-2003,Suzuki,GSX-R600,K1,2001,2003,Sport/Supersport,yes,USDM
+suzuki-gsx-r600-k4-2004-2005,Suzuki,GSX-R600,K4,2004,2005,Sport/Supersport,yes,USDM
+suzuki-gsx-r600-k6-2006-2007,Suzuki,GSX-R600,K6,2006,2007,Sport/Supersport,yes,USDM
+suzuki-gsx-r600-k8-2008-2010,Suzuki,GSX-R600,K8,2008,2010,Sport/Supersport,yes,USDM
+suzuki-gsx-r600-l1-2011-2026,Suzuki,GSX-R600,L1,2011,2026,Sport/Supersport,yes,USDM
+suzuki-gsx-r750-k1-2000-2003,Suzuki,GSX-R750,K1,2000,2003,Sport/Supersport,yes,USDM
+suzuki-gsx-r750-k4-2004-2005,Suzuki,GSX-R750,K4,2004,2005,Sport/Supersport,yes,USDM
+suzuki-gsx-r750-k6-2006-2007,Suzuki,GSX-R750,K6,2006,2007,Sport/Supersport,yes,USDM
+suzuki-gsx-r750-k8-2008-2010,Suzuki,GSX-R750,K8,2008,2010,Sport/Supersport,yes,USDM
+suzuki-gsx-r750-l1-2011-2026,Suzuki,GSX-R750,L1,2011,2026,Sport/Supersport,yes,USDM
+suzuki-hayabusa-gen1-2000-2007,Suzuki,Hayabusa,Gen1,2000,2007,Sport/Supersport,yes,USDM
+suzuki-hayabusa-gen2-2008-2020,Suzuki,Hayabusa,Gen2,2008,2020,Sport/Supersport,yes,USDM
+suzuki-hayabusa-gen3-2022-2026,Suzuki,Hayabusa,Gen3,2022,2026,Sport/Supersport,yes,USDM
+suzuki-rm-z250-launch-2004-2018,Suzuki,RM-Z250,Launch,2004,2018,Dirt/Off-road,yes,USDM
+suzuki-rm-z250-current-2019-2026,Suzuki,RM-Z250,Current,2019,2026,Dirt/Off-road,yes,USDM
+suzuki-rm-z450-launch-2008-2017,Suzuki,RM-Z450,Launch,2008,2017,Dirt/Off-road,yes,USDM
+suzuki-rm-z450-current-2018-2026,Suzuki,RM-Z450,Current,2018,2026,Dirt/Off-road,yes,USDM
+suzuki-sv650-fuel-injected-2003-2012,Suzuki,SV650,Fuel Injected,2003,2012,Sport/Supersport,yes,USDM
+suzuki-sv650-hiatus-return-2017-2026,Suzuki,SV650,Hiatus Return,2017,2026,Sport/Supersport,yes,USDM
+suzuki-v-strom-1000-dl1000-2002-2013,Suzuki,V-Strom 1000,DL1000,2002,2013,Adventure/Dual-sport,yes,USDM
+suzuki-v-strom-1000-return-2014-2019,Suzuki,V-Strom 1000,Return,2014,2019,Adventure/Dual-sport,yes,USDM
+suzuki-v-strom-1050-launch-2020-2026,Suzuki,V-Strom 1050,Launch,2020,2026,Adventure/Dual-sport,yes,USDM
+suzuki-v-strom-650-dl650-2004-2011,Suzuki,V-Strom 650,DL650,2004,2011,Adventure/Dual-sport,yes,USDM
+suzuki-v-strom-650-l2-2012-2016,Suzuki,V-Strom 650,L2,2012,2016,Adventure/Dual-sport,yes,USDM
+suzuki-v-strom-650-xt-era-2017-2024,Suzuki,V-Strom 650,XT Era,2017,2024,Adventure/Dual-sport,yes,USDM
+triumph-bonneville-t120-current-2016-2026,Triumph,Bonneville T120,Current,2016,2026,Cruiser/Harley-style,yes,USDM
+triumph-daytona-675-launch-2006-2012,Triumph,Daytona 675,Launch,2006,2012,Sport/Supersport,yes,USDM
+triumph-daytona-675-r-2013-2017,Triumph,Daytona 675,R,2013,2017,Sport/Supersport,yes,USDM
+triumph-rocket-3-classic-2004-2017,Triumph,Rocket 3,Classic,2004,2017,Cruiser/Harley-style,yes,USDM
+triumph-rocket-3-current-2020-2026,Triumph,Rocket 3,Current,2020,2026,Cruiser/Harley-style,yes,USDM
+triumph-scrambler-1200-launch-2019-2026,Triumph,Scrambler 1200,Launch,2019,2026,Adventure/Dual-sport,yes,USDM
+triumph-speed-triple-1050-launch-2005-2015,Triumph,Speed Triple 1050,Launch,2005,2015,Sport/Supersport,yes,USDM
+triumph-speed-triple-1050-r-s-2016-2020,Triumph,Speed Triple 1050,R/S,2016,2020,Sport/Supersport,yes,USDM
+triumph-speed-triple-1200-rs-launch-2021-2026,Triumph,Speed Triple 1200 RS,Launch,2021,2026,Sport/Supersport,yes,USDM
+triumph-speed-twin-1200-launch-2019-2026,Triumph,Speed Twin 1200,Launch,2019,2026,Cruiser/Harley-style,yes,USDM
+triumph-street-triple-675-launch-2008-2012,Triumph,Street Triple 675,Launch,2008,2012,Sport/Supersport,yes,USDM
+triumph-street-triple-675-current-675-2013-2016,Triumph,Street Triple 675,Current 675,2013,2016,Sport/Supersport,yes,USDM
+triumph-street-triple-765-launch-2017-2022,Triumph,Street Triple 765,Launch,2017,2022,Sport/Supersport,yes,USDM
+triumph-street-triple-765-current-2023-2026,Triumph,Street Triple 765,Current,2023,2026,Sport/Supersport,yes,USDM
+triumph-tiger-1200-explorer-2012-2021,Triumph,Tiger 1200,Explorer,2012,2021,Adventure/Dual-sport,yes,USDM
+triumph-tiger-1200-current-2022-2026,Triumph,Tiger 1200,Current,2022,2026,Adventure/Dual-sport,yes,USDM
+triumph-tiger-800-launch-2011-2014,Triumph,Tiger 800,Launch,2011,2014,Adventure/Dual-sport,yes,USDM
+triumph-tiger-800-xrx-era-2015-2017,Triumph,Tiger 800,XRx Era,2015,2017,Adventure/Dual-sport,yes,USDM
+triumph-tiger-800-final-2018-2020,Triumph,Tiger 800,Final,2018,2020,Adventure/Dual-sport,yes,USDM
+triumph-tiger-900-launch-2020-2023,Triumph,Tiger 900,Launch,2020,2023,Adventure/Dual-sport,yes,USDM
+triumph-tiger-900-current-2024-2026,Triumph,Tiger 900,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+triumph-trident-660-launch-2021-2026,Triumph,Trident 660,Launch,2021,2026,Sport/Supersport,yes,USDM
+yamaha-bolt-r-spec-launch-2014-2022,Yamaha,Bolt R-Spec,Launch,2014,2022,Cruiser/Harley-style,yes,USDM
+yamaha-mt-07-fz-07-2015-2017,Yamaha,MT-07,FZ-07,2015,2017,Sport/Supersport,yes,USDM
+yamaha-mt-07-mt-07-2018-2020,Yamaha,MT-07,MT-07,2018,2020,Sport/Supersport,yes,USDM
+yamaha-mt-07-current-2021-2026,Yamaha,MT-07,Current,2021,2026,Sport/Supersport,yes,USDM
+yamaha-mt-09-gen1-2014-2016,Yamaha,MT-09,Gen1,2014,2016,Sport/Supersport,yes,USDM
+yamaha-mt-09-gen2-2017-2020,Yamaha,MT-09,Gen2,2017,2020,Sport/Supersport,yes,USDM
+yamaha-mt-09-gen3-2021-2023,Yamaha,MT-09,Gen3,2021,2023,Sport/Supersport,yes,USDM
+yamaha-mt-09-current-2024-2026,Yamaha,MT-09,Current,2024,2026,Sport/Supersport,yes,USDM
+yamaha-mt-10-launch-2017-2021,Yamaha,MT-10,Launch,2017,2021,Sport/Supersport,yes,USDM
+yamaha-mt-10-current-2022-2026,Yamaha,MT-10,Current,2022,2026,Sport/Supersport,yes,USDM
+yamaha-super-tenere-xt1200z-2012-2013,Yamaha,Super Tenere,XT1200Z,2012,2013,Adventure/Dual-sport,yes,USDM
+yamaha-super-tenere-es-era-2014-2020,Yamaha,Super Tenere,ES Era,2014,2020,Adventure/Dual-sport,yes,USDM
+yamaha-tenere-700-us-launch-2021-2023,Yamaha,Tenere 700,US Launch,2021,2023,Adventure/Dual-sport,yes,USDM
+yamaha-tenere-700-current-2024-2026,Yamaha,Tenere 700,Current,2024,2026,Adventure/Dual-sport,yes,USDM
+yamaha-v-star-1300-launch-2007-2017,Yamaha,V Star 1300,Launch,2007,2017,Cruiser/Harley-style,yes,USDM
+yamaha-wr250r-launch-2008-2020,Yamaha,WR250R,Launch,2008,2020,Adventure/Dual-sport,yes,USDM
+yamaha-yz250f-launch-2001-2013,Yamaha,YZ250F,Launch,2001,2013,Dirt/Off-road,yes,USDM
+yamaha-yz250f-reverse-head-2014-2018,Yamaha,YZ250F,Reverse Head,2014,2018,Dirt/Off-road,yes,USDM
+yamaha-yz250f-current-2019-2026,Yamaha,YZ250F,Current,2019,2026,Dirt/Off-road,yes,USDM
+yamaha-yz450f-steel-2003-2009,Yamaha,YZ450F,Steel,2003,2009,Dirt/Off-road,yes,USDM
+yamaha-yz450f-aluminum-2010-2013,Yamaha,YZ450F,Aluminum,2010,2013,Dirt/Off-road,yes,USDM
+yamaha-yz450f-reverse-head-2014-2022,Yamaha,YZ450F,Reverse Head,2014,2022,Dirt/Off-road,yes,USDM
+yamaha-yz450f-current-2023-2026,Yamaha,YZ450F,Current,2023,2026,Dirt/Off-road,yes,USDM
+yamaha-yzf-r1-5vy-2004-2006,Yamaha,YZF-R1,5VY,2004,2006,Sport/Supersport,yes,USDM
+yamaha-yzf-r1-crossplane-2009-2014,Yamaha,YZF-R1,Crossplane,2009,2014,Sport/Supersport,yes,USDM
+yamaha-yzf-r1-current-chassis-2015-2019,Yamaha,YZF-R1,Current Chassis,2015,2019,Sport/Supersport,yes,USDM
+yamaha-yzf-r1-euro5-2020-2026,Yamaha,YZF-R1,Euro5,2020,2026,Sport/Supersport,yes,USDM
+yamaha-yzf-r3-launch-2015-2018,Yamaha,YZF-R3,Launch,2015,2018,Sport/Supersport,yes,USDM
+yamaha-yzf-r3-refresh-2019-2026,Yamaha,YZF-R3,Refresh,2019,2026,Sport/Supersport,yes,USDM
+yamaha-yzf-r6-2003-2003-2005,Yamaha,YZF-R6,2003,2003,2005,Sport/Supersport,yes,USDM
+yamaha-yzf-r6-2006-2006-2007,Yamaha,YZF-R6,2006,2006,2007,Sport/Supersport,yes,USDM
+yamaha-yzf-r6-2008-2008-2016,Yamaha,YZF-R6,2008,2008,2016,Sport/Supersport,yes,USDM
+yamaha-yzf-r6-r6-track-2017-2026,Yamaha,YZF-R6,R6 Track,2017,2026,Sport/Supersport,yes,USDM
+yamaha-yzf-r7-launch-2022-2026,Yamaha,YZF-R7,Launch,2022,2026,Sport/Supersport,yes,USDM
