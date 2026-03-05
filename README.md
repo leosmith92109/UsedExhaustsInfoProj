@@ -33,6 +33,12 @@ This project now uses a **relational CSV pipeline** (external data files) and ge
 
 ## Quick Start
 
+Windows one-click launcher (auto-installs Python if missing, installs `requirements.txt`, refreshes data, and hosts site):
+
+```powershell
+start_motoexhaust.bat
+```
+
 1. Build data:
 
 ```powershell

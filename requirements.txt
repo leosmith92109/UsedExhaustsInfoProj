@@ -1,0 +1,3 @@
+# MotoExhaust currently uses only Python standard library modules.
+# Keep this file for portability; if future dependencies are added,
+# list them here and start_motoexhaust.bat will auto-install them.
